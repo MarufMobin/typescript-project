@@ -60,11 +60,11 @@ const user3: extendedUser3 = {
 }
 
 // Function er khatre Type Alias 
-type addNumbersType = ( num1:number , num2: number ) => number;
-
-const addNumbers = (num1: number, num2: number ) : number => num1 + num2; // Without Type Elias 
+// Without Type Elias 
+const addNumbers = (num1: number, num2: number ) : number => num1 + num2; 
 
 // With Type Elias
+type addNumbersType = ( num1:number , num2: number ) => number;
 const addNumbersTwo : addNumbersType = ( num1, num2 ) => num1 + num2;
 
 // using interface to define type
