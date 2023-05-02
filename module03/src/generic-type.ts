@@ -77,3 +77,4 @@ const relationWithSelary3:GenericTuple<RelationWithSalaryType,string> = [
     },
     "Mobin"
 ];
+
