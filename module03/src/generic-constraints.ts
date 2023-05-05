@@ -16,6 +16,7 @@ const addMeInMyCrushMindTwo = <T>( myInfoTwo: T ) : T[] =>{
 
 const result6 = addMeInMyCrushMindTwo<MyInfoType>( myInfoTwo )
 
+
 // Constraints are here
 type MendatoryTypes = { 
     name : string,
@@ -44,3 +45,12 @@ type MyInfoTypeTwo = {
     other1: boolean;
     other2: null;
 }
+const myInfoNewData: MyInfoTypeTwo = {
+    name: "maruf",
+    age: 22,
+    salary: 10000,
+    other1: true,
+    other2: null
+}
+const result7 = addMeInMyCrushMindThree<MyInfoTypeTwo>(myInfoNewData)
+
