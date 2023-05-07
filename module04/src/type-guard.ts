@@ -5,7 +5,7 @@
 type Alphanumaric = string | number
 
 function add( param1: Alphanumaric, param2: Alphanumaric ): Alphanumaric{
-    if( typeof param1 === 'number' && param2 === 'number' ){
+    if( typeof param1 === 'number' && typeof param2 === 'number' ){
         return param1 + param2;
     }
     else{
