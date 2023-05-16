@@ -1,8 +1,10 @@
-import { Schema, model } from "mongoose";
-import { IUser } from "./user.interface";
+import { Model,Schema, model } from "mongoose";
+import { IUser, IUserMethods } from "./user.interface";
+
+type UserModel = Model<IUser, {}, IUserMethods>
 
  // Creating Schema using Interface
- const userSchema = new Schema<IUser>({
+ const userSchema = new Schema<IUser, UserModel, IUserMethods >({
     id: { type : String, required: true , unique: true },
     role: { type: String, required: true },      
     password: { type: String, required: true },      
@@ -26,9 +28,13 @@ import { IUser } from "./user.interface";
     emergencyContactNo: {type: String, required: true },
     presentAddress: {type: String, required: true },
     permanentAddress: {type: String, required: true },
-    
 })
-const User = model<IUser>('user',  userSchema );
+
+userSchema.method("fullName", function fullName(){
+    return this.name.firstName + " " + this.name.lastName
+});
+
+const User = model<IUser, UserModel>('user',  userSchema );
 
 export default User;
 
@@ -40,4 +46,9 @@ export default User;
     -> route-> route.ts
     -> route function -> Controller.ts
     -> Database Query function -> service.ts
+*/
+
+/* 
+    instance methods --> instance er methods 
+    class -> instance + method -> instance methods
 */
