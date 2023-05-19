@@ -25,12 +25,13 @@ db.practice.update(
 )
 */
 // Updated field value there also added only new Value and not replace old values 
+/* 
 db.practice.update(
     { _id: ObjectId("6406ad65fc13ae5a400000c6") } , {
         $addToSet: {
             interests: { $each: ['Gardenning', 'Watching TV']}
         }
-    })
+    }) */
 
 //Push Operator
 
